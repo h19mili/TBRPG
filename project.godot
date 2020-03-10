@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Battler",
+"language": "GDScript",
+"path": "res://Combatant.gd"
+}, {
+"base": "Node2D",
+"class": "Battler_M",
+"language": "GDScript",
+"path": "res://Monster.gd"
+}, {
+"base": "YSort",
+"class": "TurnQ",
+"language": "GDScript",
+"path": "res://TurnQ.gd"
+} ]
+_global_script_class_icons={
+"Battler": "",
+"Battler_M": "",
+"TurnQ": ""
+}
+
+[application]
+
+config/name="My game ML turn based like"
+run/main_scene="res://test.tscn"
+config/icon="res://icon.png"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
