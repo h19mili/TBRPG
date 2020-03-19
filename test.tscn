@@ -15,6 +15,7 @@ script = ExtResource( 2 )
 Speed = 3
 
 [node name="Monster" parent="TurnQ" instance=ExtResource( 4 )]
-Speed = 2
+Speed = 4
 [connection signal="Dmg" from="TurnQ/Combatant" to="TurnQ/Monster" method="_on_Combatant_Dmg"]
+[connection signal="completed" from="TurnQ/Combatant" to="TurnQ" method="Done"]
 [connection signal="Mdmg" from="TurnQ/Monster" to="TurnQ/Combatant" method="_on_Monster_Mdmg"]

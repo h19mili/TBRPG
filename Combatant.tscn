@@ -7,15 +7,10 @@
 extents = Vector2( 31.5209, 28.607 )
 
 [sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+animations = [  ]
 
 [node name="Combatant" type="Node2D"]
-position = Vector2( 253.48, 292.875 )
+position = Vector2( 251.859, 286.931 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -33,3 +28,12 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 2 )
+
+[node name="TextureProgress" type="TextureProgress" parent="KinematicBody2D"]
+margin_left = -31.0
+margin_top = 23.0
+margin_right = 33.0
+margin_bottom = 87.0
+max_value = 10.0
+value = 10.0
+texture_progress = ExtResource( 2 )

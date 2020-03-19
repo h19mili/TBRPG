@@ -9,7 +9,7 @@ export var STR : int
 export var DEF : int
 signal Dmg
 signal Player
-
+signal completed
 func _ready():
 	
 	pass 
@@ -17,11 +17,11 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		emit_signal("Dmg")
-		get_node("/root/Node2D/TurnQ").initialize()
 	if Input.is_action_just_pressed("ui_right"):
 		print(CM_HP)
+		emit_signal("completed")
+		print("Jag är klar")
 	if Input.is_action_just_pressed("ui_down"):
-		#TurnQ.initialize()
 		print("hi")
 
 func _on_Monster_Mdmg():

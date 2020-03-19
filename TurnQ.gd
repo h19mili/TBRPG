@@ -1,8 +1,10 @@
 extends YSort
 
 class_name TurnQ
-
+signal completed
 onready var active_player = Battler #and Battler_M
+onready var active_monster = Battler_M
+onready var Allfighter = active_monster and active_player
 
 func _ready():
 	initialize()
@@ -11,30 +13,37 @@ func _ready():
 
 func initialize():
 	var Battlers = get_players()
-	#print("BATTLERS: ")
-	#print(Battlers)
+	print("BATTLERS: ")
+	print(Battlers)
 	Battlers.sort_custom(self, 'sort_players')
-	#Battlers.raise()
-	active_player = get_child(0)
-	_next_battler()
+	Battlers[1].raise()
+	print("BATTLERS efter: ")
+	print(Battlers)
+	Allfighter = get_child(0)
+	print(get_child(0))
+	play_turn()
+	#active_monster = get_child(0)
+	#_next_battler()
 	#print(get_child_count())
 
 func play_turn():
-	yield(active_player.play_turn(), "completed")
-	var new_index : int = (active_player.get_index() + 1) % get_child_count()
-	active_player = get_child(new_index)
-	_next_battler()
-	print ("hej")
+	yield(Allfighter, "completed")
+	print("aaa")
+	var new_index : int = (Allfighter.get_index() + 1) % get_child_count()
+	Allfighter = get_child(new_index)
+	#_next_battler()
+	print (new_index)
 
 static func sort_players(a : Battler_M, b : Battler) -> bool:
 	return a.Speed > b.Speed
-	
-static func tobbe_sort(a = [], b = []):
-	return a
 
 func _next_battler():
-	var next_player_index : int = (active_player.get_index() + 1) % get_child_count()
-	active_player = get_child(next_player_index)
+	var new_index : int = (Allfighter.get_index() + 1) % get_child_count()
+	Allfighter = get_child(new_index)
 
 func get_players():
 		return get_children()
+
+func Done():
+	emit_signal("completed")
+	pass 

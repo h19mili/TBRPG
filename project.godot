@@ -36,6 +36,10 @@ config/name="My game ML turn based like"
 run/main_scene="res://test.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/resizable=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
