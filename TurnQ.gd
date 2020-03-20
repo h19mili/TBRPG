@@ -20,7 +20,7 @@ func initialize():
 	print("BATTLERS efter: ")
 	print(Battlers)
 	Allfighter = get_child(0)
-	print(get_child(0))
+	#print(get_child(0))
 	play_turn()
 	#active_monster = get_child(0)
 	#_next_battler()
@@ -28,11 +28,11 @@ func initialize():
 
 func play_turn():
 	yield(Allfighter, "completed")
-	print("aaa")
+	print("fight")
 	var new_index : int = (Allfighter.get_index() + 1) % get_child_count()
 	Allfighter = get_child(new_index)
 	#_next_battler()
-	print (new_index)
+	print (get_child_count())
 
 static func sort_players(a : Battler_M, b : Battler) -> bool:
 	return a.Speed > b.Speed

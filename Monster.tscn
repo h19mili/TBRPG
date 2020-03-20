@@ -15,6 +15,7 @@ __meta__ = {
 "_edit_group_": true
 }
 Max_HP = 5
+CM_HP = 5
 STR = 1
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
@@ -30,7 +31,7 @@ margin_left = -31.4237
 margin_top = 15.0647
 margin_right = 32.5763
 margin_bottom = 79.0647
-max_value = 10.0
-value = 10.0
+max_value = 5.0
+value = 5.0
 texture_over = ExtResource( 3 )
 texture_progress = ExtResource( 4 )
