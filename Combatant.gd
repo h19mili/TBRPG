@@ -10,6 +10,8 @@ export var DEF : int
 signal Dmg
 signal Player
 signal completed
+onready var Healthbar = get_node("KinematicBody2D/Player_health")
+
 func _ready():
 	
 	pass 
@@ -25,14 +27,14 @@ func _process(delta):
 		print("hi")
 
 func _on_Monster_Mdmg():
-	Health(1.0)
+	get_node("KinematicBody2D/Player_health").value(1.0)
 	print (CM_HP)
 
 func init(Max_HP, CM_HP):
 	self.CM_HP = Max_HP * 1.0
 	self.CM_HP = clamp(CM_HP * 1.0, 0, Max_HP)
 
-func Health(value):
+func Healthbar(value):
 	self.Max_HP = Max_HP * 1.0
 	self.CM_HP = clamp((CM_HP - value), 0, Max_HP)
 	update()

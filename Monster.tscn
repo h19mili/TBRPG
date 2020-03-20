@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Monster.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://bar(2).png" type="Texture" id=3]
+[ext_resource path="res://bar(1).png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.474, 28.7766 )
 
 [node name="Monster" type="Node2D"]
-position = Vector2( 669.475, 214.737 )
+position = Vector2( 670.643, 209.773 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -22,3 +24,13 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 shape = SubResource( 1 )
+
+[node name="Monster_health" type="TextureProgress" parent="KinematicBody2D"]
+margin_left = -31.4237
+margin_top = 15.0647
+margin_right = 32.5763
+margin_bottom = 79.0647
+max_value = 10.0
+value = 10.0
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
