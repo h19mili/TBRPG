@@ -2,9 +2,10 @@ extends YSort
 
 class_name TurnQ
 signal completed
-onready var active_player = Battler #and Battler_M
+onready var active_player = Battler
 onready var active_monster = Battler_M
 onready var Allfighter = active_monster and active_player
+var new_index
 
 func _ready():
 	initialize()

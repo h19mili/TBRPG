@@ -4,12 +4,11 @@ func _ready():
 	pass 
 
 func _process(delta):
-	Attack_action()
+	MAttack_action()
 	pass
 
-func Attack_action():
-	if Input.is_action_just_pressed("Attack"):
+func MAttack_action():
+	if Input.is_action_just_pressed("Mattack"):
 		print("attack")
-		emit_signal("Dmg")
+		emit_signal("Mdmg")
 		get_node("TurnQ").Done("completed")
-		pass
