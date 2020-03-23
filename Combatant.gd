@@ -19,16 +19,14 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		emit_signal("Dmg")
+		emit_signal("completed")
 	if Input.is_action_just_pressed("ui_right"):
-		print(CM_HP)
-		get_node("TurnQ").Done("completed")
-		print("Jag är klar")
-	if Input.is_action_just_pressed("ui_down"):
-		print("hi")
+		get_node("..").Done()
+		print("Jag är klar P")
 
 func _on_Monster_Mdmg():
 	CM_HP -= 1
-	get_node("KinematicBody2D/Player_health").value = CM_HP
+	Health.value = CM_HP
 	print (CM_HP)
 
 func init(Max_HP, CM_HP):

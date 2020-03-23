@@ -4,8 +4,9 @@ class_name TurnQ
 signal completed
 onready var active_player = Battler
 onready var active_monster = Battler_M
-onready var Allfighter = active_monster and active_player
+onready var Allfighter = get_players() #active_monster and active_player
 var new_index
+var Battlers = get_players()
 
 func _ready():
 	initialize()
@@ -21,19 +22,17 @@ func initialize():
 	print("BATTLERS efter: ")
 	print(Battlers)
 	Allfighter = get_child(0)
-	#print(get_child(0))
 	play_turn()
-	#active_monster = get_child(0)
-	#_next_battler()
-	#print(get_child_count())
 
 func play_turn():
 	yield(Allfighter, "completed")
 	print("fight")
 	var new_index : int = (Allfighter.get_index() + 1) % get_child_count()
 	Allfighter = get_child(new_index)
-	#_next_battler()
-	print (get_child_count())
+	yield(Allfighter, "completed")
+	print("again")
+	_next_battler()
+	play_turn()
 
 static func sort_players(a : Battler_M, b : Battler) -> bool:
 	return a.Speed > b.Speed

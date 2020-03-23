@@ -1,5 +1,7 @@
 extends Node
 
+signal Mdmg
+
 func _ready():
 	pass 
 
@@ -11,4 +13,4 @@ func MAttack_action():
 	if Input.is_action_just_pressed("Mattack"):
 		print("attack")
 		emit_signal("Mdmg")
-		get_node("TurnQ").Done("completed")
+		get_node("/root/Node2D/TurnQ").Done()

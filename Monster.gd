@@ -1,5 +1,4 @@
 extends Node2D
-#Monster
 class_name Battler_M
 
 export var Max_HP : int
