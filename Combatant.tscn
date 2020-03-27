@@ -42,5 +42,5 @@ value = 10.0
 texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 4 )
 
-[node name="A-Action" type="Node" parent="."]
+[node name="A-Action" type="Node2D" parent="."]
 script = ExtResource( 5 )

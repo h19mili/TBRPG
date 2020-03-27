@@ -21,7 +21,6 @@ func _process(delta):
 		emit_signal("Dmg")
 		emit_signal("completed")
 	if Input.is_action_just_pressed("ui_right"):
-		get_node("..").Done()
 		print("Jag är klar P")
 
 func _on_Monster_Mdmg():
@@ -44,3 +43,8 @@ func update():
 
 func Stats():
 	Speed == 3
+
+func _A_action():
+	emit_signal("completed")
+
+
