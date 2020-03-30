@@ -39,3 +39,6 @@ texture_progress = ExtResource( 4 )
 
 [node name="M-Action" type="Node" parent="."]
 script = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="M-Action"]
+autostart = true

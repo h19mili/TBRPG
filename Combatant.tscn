@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Combatant.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://bar(2).png" type="Texture" id=3]
 [ext_resource path="res://bar(1).png" type="Texture" id=4]
 [ext_resource path="res://A-Action.gd" type="Script" id=5]
+[ext_resource path="res://Attack_Butten.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.5209, 28.607 )
@@ -13,15 +14,15 @@ extents = Vector2( 31.5209, 28.607 )
 animations = [  ]
 
 [node name="Combatant" type="Node2D"]
-position = Vector2( 256.712, 287.255 )
+position = Vector2( 251.568, 288.112 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 Max_HP = 10
 STR = 2
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
 texture = ExtResource( 2 )
@@ -44,3 +45,11 @@ texture_progress = ExtResource( 4 )
 
 [node name="A-Action" type="Node2D" parent="."]
 script = ExtResource( 5 )
+
+[node name="Attack_Butten" type="Button" parent="."]
+margin_left = -29.7148
+margin_top = -65.1426
+margin_right = 28.2852
+margin_bottom = -45.1426
+text = "press"
+script = ExtResource( 6 )
