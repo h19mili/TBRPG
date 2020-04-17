@@ -12,11 +12,18 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Combatant" parent="TurnQ" instance=ExtResource( 3 )]
-Speed = 3
+Max_HP = 40
+Speed = 4
+STR = 8
+DEF = 5
 
 [node name="Monster" parent="TurnQ" instance=ExtResource( 4 )]
 position = Vector2( 697.643, 245.773 )
-Speed = 4
+Max_HP = 23
+CM_HP = 23
+STR = 5
+Speed = 7
+DEF = 4
 [connection signal="Dmg" from="TurnQ/Combatant" to="TurnQ/Monster" method="_on_Combatant_Dmg"]
 [connection signal="completed" from="TurnQ/Combatant" to="TurnQ" method="Done"]
 [connection signal="Mdmg" from="TurnQ/Monster" to="TurnQ/Combatant" method="_on_Monster_Mdmg"]

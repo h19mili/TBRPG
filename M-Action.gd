@@ -12,10 +12,10 @@ func _ready():
 	pass 
 
 func _process(delta):
-	yield(Battler_M, "completed")
-	print("hi")
+	#yield(Battler_M, "completed")
+	#print("hi")
 	timer += delta
-	if timer >= 3.0:
+	if timer >= 5.0:
 		timer = 0
 		MAttack_action()
 

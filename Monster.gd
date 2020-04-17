@@ -4,7 +4,10 @@ class_name Battler_M
 export var Max_HP : int
 export var CM_HP : int 
 export var STR : int 
-export var Speed : int 
+export var Speed : int
+export var Stamina : int
+export var DEF : int
+
 signal Mdmg
 signal completed
 

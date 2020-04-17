@@ -2,7 +2,7 @@ extends Node2D
 class_name Battler
 
 export var Max_HP : int
-var CM_HP = 10
+var CM_HP = 40
 export var Max_Stamina : int
 export var Speed : int
 export var STR : int 
@@ -11,6 +11,7 @@ signal Dmg
 signal Player
 signal completed
 onready var Health = get_node("KinematicBody2D/Player_health")
+onready var M_STR = Battler_M
 
 func _ready():
 	
@@ -21,7 +22,7 @@ func _process(delta):
 		emit_signal("Dmg")
 		emit_signal("completed")
 	if Input.is_action_just_pressed("ui_right"):
-		print("Jag är klar P")
+		print("Jag är klar :P")
 
 func _on_Monster_Mdmg():
 	CM_HP -= 1
@@ -44,7 +45,6 @@ func update():
 func Stats():
 	Speed == 3
 
-func _A_action():
-	emit_signal("completed")
+
 
 
