@@ -12,13 +12,13 @@ func _ready():
 	pass 
 
 func _process(delta):
-	#MAttack_action()
+	yield(Battler_M, "completed")
+	print("hi")
 	timer += delta
 	if timer >= 3.0:
-		print("attack")
 		timer = 0
 		MAttack_action()
-	pass
+
 
 func MAttack_action():
 	#if Input.is_action_just_pressed("Mattack"):# = E
