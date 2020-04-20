@@ -10,8 +10,9 @@ export var DEF : int
 signal Dmg
 signal Player
 signal completed
+signal Done
 onready var Health = get_node("KinematicBody2D/Player_health")
-onready var M_STR = Battler_M
+# var M_STR = Battler_M
 
 func _ready():
 	

@@ -2,6 +2,7 @@ extends Node2D
 
 signal Dmg
 signal completed
+signal Done
 
 func _ready():
 	pass 
@@ -14,4 +15,5 @@ func Attack_action():
 	if Input.is_action_just_pressed("Attack"):# = Q
 		get_node("/root/Node2D/TurnQ/Combatant").emit_signal("Dmg")
 		get_node("/root/Node2D/TurnQ/Combatant").emit_signal("completed")
+		get_node("/root/Node2D/TurnQ/Monster/M-Action").emit_signal("Done")
 		print("attack")

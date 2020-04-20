@@ -10,6 +10,7 @@ export var DEF : int
 
 signal Mdmg
 signal completed
+signal Done
 
 func _ready():
 	pass 
