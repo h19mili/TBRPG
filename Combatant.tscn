@@ -16,7 +16,7 @@ animations = [  ]
 [node name="Combatant" type="Node2D"]
 position = Vector2( 251.568, 288.112 )
 script = ExtResource( 1 )
-Max_HP = 10
+Max_HP = 40
 STR = 2
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
@@ -38,8 +38,8 @@ margin_left = -31.9706
 margin_top = 14.2646
 margin_right = 32.0294
 margin_bottom = 78.2646
-max_value = 10.0
-value = 10.0
+max_value = 40.0
+value = 40.0
 texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 4 )
 
@@ -53,3 +53,4 @@ margin_right = 28.2852
 margin_bottom = -45.1426
 text = "press"
 script = ExtResource( 6 )
+[connection signal="pressed" from="Attack_Butten" to="." method="Butten_pressed"]

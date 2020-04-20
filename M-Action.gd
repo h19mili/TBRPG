@@ -13,7 +13,6 @@ func _ready():
 	pass 
 
 func _process(delta):
-	_onDone(delta)
 	pass
 
 func MAttack_action():
@@ -22,11 +21,7 @@ func MAttack_action():
 		get_node("/root/Node2D/TurnQ/Monster").emit_signal("completed")
 		get_node("/root/Node2D/TurnQ/Monster").emit_signal("Mdmg")
 
-func _onDone(delta):
-	yield(Battler_M, "Done")
-	#print("hi")
-	timer += delta
-	if timer >= 5.0:
-		timer = 0
-		MAttack_action()
-		print("hi")
+func _onDone():
+	yield(get_node("/root/Node2D/TurnQ/Monster"), "Done")
+	MAttack_action()
+	print("2")

@@ -46,6 +46,7 @@ func update():
 func Stats():
 	Speed == 3
 
-
-
-
+func Butten_pressed():
+	get_node("../../Monstertimer").start(3)
+	emit_signal("Done")
+	pass

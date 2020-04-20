@@ -38,3 +38,8 @@ func update():
 	var percentage = CM_HP / Max_HP
 func Stats():
 	Speed == 4
+
+func _on_Monstertimer_timeout():
+	print("1")
+	emit_signal("Done")
+	pass 
