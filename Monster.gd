@@ -36,6 +36,5 @@ func update():
 	var percentage = cm_hp / max_hp
 
 func _on_Monstertimer_timeout():
-	print("Monster attack")
 	emit_signal("Done")
 	pass 
