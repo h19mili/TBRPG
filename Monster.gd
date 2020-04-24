@@ -19,10 +19,9 @@ func _process(delta):
 	pass
 
 func _on_Combatant_Dmg():
-	cm_hp -= 1
+	cm_hp += MDEF - Attack
 	get_node("KinematicBody2D/Monster_health").value = cm_hp
 	print(cm_hp)
-	print(Attack)
 
 func init(max_hp, cm_hp):
 	self.cm_hp = max_hp * 1.0

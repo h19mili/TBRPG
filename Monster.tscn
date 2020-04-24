@@ -15,9 +15,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-Max_HP = 23
-CM_HP = 23
-STR = 1
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
@@ -39,3 +36,6 @@ texture_progress = ExtResource( 4 )
 
 [node name="M-Action" type="Node" parent="."]
 script = ExtResource( 5 )
+
+[node name="Mstart" type="Timer" parent="."]
+process_mode = 0

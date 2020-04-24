@@ -15,15 +15,15 @@ one_shot = true
 script = ExtResource( 2 )
 
 [node name="Combatant" parent="TurnQ" instance=ExtResource( 3 )]
-Speed = 4
+Speed = 5
 STR = 8
-DEF = 5
+DEF = 4
 
 [node name="Monster" parent="TurnQ" instance=ExtResource( 4 )]
 position = Vector2( 697.643, 245.773 )
 max_hp = 23
 cm_hp = 23
-MSTR = 3
+MSTR = 5
 Speed = 8
 MDEF = 4
 [connection signal="timeout" from="Monstertimer" to="TurnQ/Monster" method="_on_Monstertimer_timeout"]
