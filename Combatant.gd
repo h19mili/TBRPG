@@ -15,15 +15,10 @@ onready var Health = get_node("KinematicBody2D/Player_health")
 # var M_STR = Battler_M
 
 func _ready():
-	
 	pass 
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		emit_signal("Dmg")
-		emit_signal("completed")
-	if Input.is_action_just_pressed("ui_right"):
-		print("Jag är klar :P")
+	pass
 
 func _on_Monster_Mdmg():
 	CM_HP -= 1

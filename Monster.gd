@@ -1,45 +1,42 @@
 extends Node2D
 class_name Battler_M
 
-export var Max_HP : int
-export var CM_HP : int 
-export var STR : int 
+export var max_hp : int
+export var cm_hp : int 
+export var MSTR : int 
 export var Speed : int
-export var Stamina : int
-export var DEF : int
-
+export var MStamina : int
+export var MDEF : int
 signal Mdmg
 signal completed
 signal Done
+onready var Attack = get_node("../Combatant").STR
 
 func _ready():
 	pass 
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_up"):
-		emit_signal("Mdmg")
-		emit_signal("completed")
+	pass
 
 func _on_Combatant_Dmg():
-	CM_HP -= 1
-	get_node("KinematicBody2D/Monster_health").value = CM_HP
-	print (CM_HP)
+	cm_hp -= 1
+	get_node("KinematicBody2D/Monster_health").value = cm_hp
+	print(cm_hp)
+	print(Attack)
 
-func init(Max_HP, CM_HP):
-	self.CM_HP = Max_HP * 1.0
-	self.CM_HP = clamp(CM_HP * 1.0, 0, Max_HP)
+func init(max_hp, cm_hp):
+	self.cm_hp = max_hp * 1.0
+	self.cm_hp = clamp(cm_hp * 1.0, 0, max_hp)
 
 func Healthbar(value):
-	self.Max_HP = Max_HP * 1.0
-	self.CM_HP = clamp((CM_HP - value), 0, Max_HP)
+	self.max_hp = max_hp * 1.0
+	self.cm_hp = clamp((cm_hp - value), 0, max_hp)
 	update()
 
 func update():
-	var percentage = CM_HP / Max_HP
-func Stats():
-	Speed == 4
+	var percentage = cm_hp / max_hp
 
 func _on_Monstertimer_timeout():
-	print("1")
+	print("Monster attack")
 	emit_signal("Done")
 	pass 

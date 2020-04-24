@@ -21,9 +21,11 @@ DEF = 5
 
 [node name="Monster" parent="TurnQ" instance=ExtResource( 4 )]
 position = Vector2( 697.643, 245.773 )
-Max_HP = null
-CM_HP = null
-STR = null
+max_hp = 23
+cm_hp = 23
+MSTR = 3
+Speed = 8
+MDEF = 4
 [connection signal="timeout" from="Monstertimer" to="TurnQ/Monster" method="_on_Monstertimer_timeout"]
 [connection signal="Dmg" from="TurnQ/Combatant" to="TurnQ/Monster" method="_on_Combatant_Dmg"]
 [connection signal="Done" from="TurnQ/Combatant" to="TurnQ/Monster/M-Action" method="_onDone"]

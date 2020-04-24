@@ -17,11 +17,10 @@ func _process(delta):
 
 func MAttack_action():
 	#if Input.is_action_just_pressed("Mattack"):# = E
-		print("attack")
 		get_node("/root/Node2D/TurnQ/Monster").emit_signal("completed")
 		get_node("/root/Node2D/TurnQ/Monster").emit_signal("Mdmg")
 
 func _onDone():
 	yield(get_node("/root/Node2D/TurnQ/Monster"), "Done")
 	MAttack_action()
-	print("2")
+	print("Monster done")
