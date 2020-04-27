@@ -37,6 +37,6 @@ texture_progress = ExtResource( 4 )
 [node name="M-Action" type="Node" parent="."]
 script = ExtResource( 5 )
 
-[node name="Mstart" type="Timer" parent="M-Action"]
-wait_time = 3.0
-[connection signal="timeout" from="M-Action/Mstart" to="M-Action" method="_on_Mstart_timeout"]
+[node name="Mstart" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Mstart" to="." method="_on_Mstart_timeout"]

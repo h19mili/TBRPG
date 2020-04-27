@@ -11,6 +11,7 @@ signal completed
 signal Done
 
 func _ready():
+	Rstart()
 	pass 
 
 func _process(delta):
@@ -26,8 +27,6 @@ func _onDone():
 
 func Rstart():
 	speed > cspeed 
-	get_node("../Mstart").start(3)
-
-func _on_Mstart_timeout():
-	emit_signal("Done")
+	get_node("../Mstart").start(1)
+	get_node("/root/Node2D/TurnQ/Monster").emit_signal("Done")
 	pass

@@ -38,3 +38,10 @@ func update():
 func _on_Monstertimer_timeout():
 	emit_signal("Done")
 	pass 
+
+
+func _on_Mstart_timeout():
+	emit_signal("Done")
+	self.emit_signal("Done")
+	print("hi")
+	pass 
