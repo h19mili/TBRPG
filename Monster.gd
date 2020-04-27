@@ -40,8 +40,7 @@ func _on_Monstertimer_timeout():
 	pass 
 
 
-func _on_Mstart_timeout():
-	emit_signal("Done")
-	self.emit_signal("Done")
-	print("hi")
+func _on_Timer_timeout():
+	emit_signal("completed")
+	emit_signal("Mdmg")
 	pass 

@@ -12,7 +12,7 @@ signal Done
 
 func _ready():
 	Rstart()
-	pass 
+	pass
 
 func _process(delta):
 	pass
@@ -26,7 +26,6 @@ func _onDone():
 	MAttack_action()
 
 func Rstart():
-	speed > cspeed 
-	get_node("../Mstart").start(1)
-	get_node("/root/Node2D/TurnQ/Monster").emit_signal("Done")
-	pass
+	if speed > cspeed: 
+		get_node("/root/Node2D/Timer").start(1)
+		pass
