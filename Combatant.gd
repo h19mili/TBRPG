@@ -39,7 +39,7 @@ func update():
 	var percentage = CM_HP / Max_HP
 
 func Stats():
-	Speed == 3
+	pass
 
 func Butten_pressed():
 	get_node("../../Monstertimer").start(3)

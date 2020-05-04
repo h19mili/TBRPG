@@ -11,6 +11,7 @@ signal Mdmg
 signal completed
 signal Done
 onready var Attack = get_node("../Combatant").STR
+onready var Mhealth = get_node("KinematicBody2D/Monster_health")
 
 func _ready():
 	pass 
@@ -20,7 +21,7 @@ func _process(delta):
 
 func _on_Combatant_Dmg():
 	cm_hp += MDEF - Attack
-	get_node("KinematicBody2D/Monster_health").value = cm_hp
+	Mhealth.value = cm_hp
 	print(cm_hp)
 
 func init(max_hp, cm_hp):

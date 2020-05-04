@@ -11,6 +11,9 @@ script = ExtResource( 1 )
 [node name="Monstertimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [node name="TurnQ" type="YSort" parent="."]
 script = ExtResource( 2 )
 
@@ -24,14 +27,18 @@ position = Vector2( 697.643, 245.773 )
 max_hp = 23
 cm_hp = 23
 MSTR = 5
-Speed = 8
 MDEF = 4
 
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
+[node name="Monster2" parent="TurnQ" instance=ExtResource( 4 )]
+position = Vector2( 697.643, 245.773 )
+max_hp = 23
+cm_hp = 23
+MSTR = 5
+MDEF = 4
 [connection signal="timeout" from="Monstertimer" to="TurnQ/Monster" method="_on_Monstertimer_timeout"]
+[connection signal="timeout" from="Timer" to="TurnQ/Monster" method="_on_Timer_timeout"]
 [connection signal="Dmg" from="TurnQ/Combatant" to="TurnQ/Monster" method="_on_Combatant_Dmg"]
 [connection signal="Done" from="TurnQ/Combatant" to="TurnQ/Monster/M-Action" method="_onDone"]
 [connection signal="completed" from="TurnQ/Combatant" to="TurnQ" method="Done"]
 [connection signal="Mdmg" from="TurnQ/Monster" to="TurnQ/Combatant" method="_on_Monster_Mdmg"]
-[connection signal="timeout" from="Timer" to="TurnQ/Monster" method="_on_Timer_timeout"]
+[connection signal="Mdmg" from="TurnQ/Monster2" to="TurnQ/Combatant" method="_on_Monster_Mdmg"]

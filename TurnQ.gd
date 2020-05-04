@@ -18,7 +18,7 @@ func initialize():
 	print("BATTLERS: ")
 	print(Battlers)
 	Battlers.sort_custom(self, 'sort_players')
-	Battlers[1].raise()
+	Battlers[0].raise()
 	print("BATTLERS efter: ")
 	print(Battlers)
 	Allfighter = get_child(0)
@@ -34,7 +34,7 @@ func play_turn():
 	_next_battler()
 	play_turn()
 
-static func sort_players(a : Battler_M, b : Battler) -> bool:
+static func sort_players(a : Battler_M, b : Battler, c : Battler_M) -> bool:
 	return a.Speed > b.Speed
 
 func _next_battler():
