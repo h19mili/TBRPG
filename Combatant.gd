@@ -13,6 +13,7 @@ signal completed
 signal Done
 onready var Health = get_node("KinematicBody2D/Player_health")
 onready var Mattack = get_node("../Monster").MSTR
+onready var MMattack = get_node("../Monster2").MSTR
 
 func _ready():
 	pass 
@@ -21,6 +22,7 @@ func _process(delta):
 	pass
 
 func _on_Monster_Mdmg():
+	CM_HP += DEF - MMattack
 	CM_HP += DEF - Mattack
 	Health.value = CM_HP
 	print (CM_HP)

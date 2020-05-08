@@ -45,3 +45,8 @@ func _on_Timer_timeout():
 	emit_signal("completed")
 	emit_signal("Mdmg")
 	pass 
+
+
+func _on_Button_pressed():
+	emit_signal("completed")
+	emit_signal("Mdmg")

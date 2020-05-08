@@ -12,7 +12,6 @@ signal Done
 
 func _ready():
 	Rstart()
-	pass
 
 func _process(delta):
 	pass

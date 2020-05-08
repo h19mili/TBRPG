@@ -10,11 +10,10 @@
 extents = Vector2( 31.474, 28.7766 )
 
 [node name="Monster" type="Node2D"]
-position = Vector2( 576.301, 120.601 )
+position = Vector2( 537.531, 156.787 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
+MSTR = 7
+Speed = 6
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
@@ -39,4 +38,11 @@ script = ExtResource( 5 )
 
 [node name="Mstart" type="Timer" parent="."]
 one_shot = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = -57.0
+margin_top = -63.0
+margin_right = 34.0
+margin_bottom = -43.0
 [connection signal="timeout" from="Mstart" to="." method="_on_Mstart_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
