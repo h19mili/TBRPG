@@ -1,12 +1,13 @@
 extends Node2D
 class_name Battler
 
-export var Max_HP : int
-var CM_HP = 40
-export var Max_Stamina : int
-export var Speed : int
-export var STR : int 
-export var DEF : int
+var Max_HP : int
+var CM_HP : int 
+var Stamina : int
+var Speed : int
+var STR : int 
+var DEF : int
+
 signal Dmg
 signal Player
 signal completed
@@ -47,3 +48,17 @@ func Butten_pressed():
 	get_node("../../Monstertimer").start(3)
 	emit_signal("Done")
 	pass
+
+func initialize(stats : Startingstats):
+	Max_HP = stats.Max_HP
+	Stamina = stats.Max_Stamina
+	STR = stats.STR
+	DEF = stats.DEF
+	Speed = stats.Speed
+	CM_HP = Max_HP
+	pass
+
+
+
+
+
