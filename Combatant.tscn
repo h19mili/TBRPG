@@ -58,5 +58,5 @@ script = ExtResource( 6 )
 script = ExtResource( 7 )
 Startingstats = ExtResource( 8 )
 
-[node name="Stats" type="Node" parent="Job"]
+[node name="Skill" type="Node" parent="Job"]
 [connection signal="pressed" from="Attack_Butten" to="." method="Butten_pressed"]

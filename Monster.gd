@@ -1,12 +1,13 @@
 extends Node2D
 class_name Battler_M
 
-export var max_hp : int
-export var cm_hp : int 
-export var MSTR : int 
-export var Speed : int
-export var MStamina : int
-export var MDEF : int
+var max_hp : int
+var cm_hp : int 
+var MSTR : int 
+var Speed : int
+var MStamina : int
+var MDEF : int
+
 signal Mdmg
 signal completed
 signal Done
@@ -35,6 +36,15 @@ func Healthbar(value):
 
 func update():
 	var percentage = cm_hp / max_hp
+
+func initialize(stats : Startingstats):
+	max_hp = stats.Max_HP
+	MStamina = stats.Max_Stamina
+	MSTR = stats.STR
+	MDEF = stats.DEF
+	Speed = stats.Speed
+	cm_hp = max_hp
+	pass
 
 func _on_Monstertimer_timeout():
 	emit_signal("Done")

@@ -21,11 +21,6 @@ script = ExtResource( 2 )
 
 [node name="Monster" parent="TurnQ" instance=ExtResource( 4 )]
 position = Vector2( 697.643, 245.773 )
-max_hp = 23
-cm_hp = 23
-MSTR = 5
-Speed = 8
-MDEF = 4
 
 [node name="Monster2" parent="TurnQ" instance=ExtResource( 4 )]
 [connection signal="timeout" from="Monstertimer" to="TurnQ/Monster" method="_on_Monstertimer_timeout"]

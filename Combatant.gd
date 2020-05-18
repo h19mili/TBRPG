@@ -23,7 +23,7 @@ func _process(delta):
 	pass
 
 func _on_Monster_Mdmg():
-	CM_HP += DEF - MMattack
+	CM_HP -= DEF + MMattack
 	CM_HP += DEF - Mattack
 	Health.value = CM_HP
 	print (CM_HP)

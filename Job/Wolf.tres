@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource( 1 )
-Job_name = "Knight"
-Max_HP = 40
+Job_name = "Wolf"
+Max_HP = 20
 CM_HP = null
 Max_Stamina = null
-Speed = 6
-STR = 8
-DEF = 6
+Speed = 10
+STR = 6
+DEF = 4

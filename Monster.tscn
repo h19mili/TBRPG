@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Monster.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://bar(2).png" type="Texture" id=3]
 [ext_resource path="res://bar(1).png" type="Texture" id=4]
 [ext_resource path="res://M-Action.gd" type="Script" id=5]
+[ext_resource path="res://Job.gd" type="Script" id=6]
+[ext_resource path="res://Job/Wolf.tres" type="Resource" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.474, 28.7766 )
@@ -12,8 +14,6 @@ extents = Vector2( 31.474, 28.7766 )
 [node name="Monster" type="Node2D"]
 position = Vector2( 537.531, 156.787 )
 script = ExtResource( 1 )
-MSTR = 7
-Speed = 6
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
@@ -44,5 +44,11 @@ margin_left = -57.0
 margin_top = -63.0
 margin_right = 34.0
 margin_bottom = -43.0
+
+[node name="Job" type="Node" parent="."]
+script = ExtResource( 6 )
+Startingstats = ExtResource( 7 )
+
+[node name="Skill" type="Node" parent="Job"]
 [connection signal="timeout" from="Mstart" to="." method="_on_Mstart_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
